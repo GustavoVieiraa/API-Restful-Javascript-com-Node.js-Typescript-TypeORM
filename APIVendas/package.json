@@ -23,6 +23,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.1",
-    "express-async-errors": "^3.1.1"
+    "express-async-errors": "^3.1.1",
+    "pg": "^8.13.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20"
   }
 }
