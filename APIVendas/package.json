@@ -4,8 +4,8 @@
   "description": "Construção de API de Vendas",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon",
-    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts"
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
+    "migrations": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "author": "Gustavo Vieira",
   "license": "ISC",
