@@ -5,6 +5,7 @@ import cors from 'cors';
 import routes from './routes';
 import AppError from "@shared/errors/AppError";
 import '@shared/typeorm';
+import { errors } from 'celebrate';
 
 const app = express();
 
@@ -16,7 +17,11 @@ app.use(express.json());
 import swaggerUi from 'swagger-ui-express'; 
 import swaggerSpec from 'src/config/swaggerConfig';
 
+// Import routes
 app.use(routes);
+
+// Import errors validation celebrate
+app.use(errors());
 
 // Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
