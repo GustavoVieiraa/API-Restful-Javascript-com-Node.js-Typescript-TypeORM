@@ -15,7 +15,7 @@ class UpdateProductService {
   public async execute({ id, name, price, quantity }: IRequest): Promise<Product>  {
 
     const productsRepository = getCustomRepository(ProductRepository)
-    
+
     const product = await productsRepository.findOne(id);
 
     if (!product) {
