@@ -4,7 +4,7 @@ import { Router } from 'express';
 
 const routes = Router();
 
-routes.use('/products', productsRouter);
-routes.use('/users', usersRouter);
+routes.use('/api/v1/products', productsRouter);
+routes.use('/api/v1/users', usersRouter);
 
 export default routes;
