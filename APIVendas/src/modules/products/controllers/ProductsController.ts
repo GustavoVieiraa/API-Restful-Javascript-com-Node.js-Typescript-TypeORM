@@ -25,7 +25,7 @@ export default class ProductsController {
 
     const product = await showProduct.execute( { id });
 
-    return response.json(product).json(200);
+    return response.json(product).status(200);
 
   }
 
