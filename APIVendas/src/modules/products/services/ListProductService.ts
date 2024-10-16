@@ -8,7 +8,6 @@ class ListProductService {
 
     const productsRepository = getCustomRepository(ProductRepository)
     
-
     const products = await productsRepository.find();
 
     return products
