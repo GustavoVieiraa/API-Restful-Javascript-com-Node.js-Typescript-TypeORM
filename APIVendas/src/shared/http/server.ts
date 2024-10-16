@@ -11,7 +11,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+// Import Swagger (Documentation)
+import swaggerUi from 'swagger-ui-express'; 
+import swaggerSpec from 'src/config/swaggerConfig';
+
 app.use(routes);
+
+// Documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 app.use(
   (error: Error, request: Request, response: Response, next: NextFunction): any => {
