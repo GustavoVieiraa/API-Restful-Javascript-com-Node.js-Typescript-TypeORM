@@ -6,16 +6,21 @@ import routes from './routes';
 import AppError from "@shared/errors/AppError";
 import '@shared/typeorm';
 import { errors } from 'celebrate';
+import uploadConfig from '@config/upload'
+
+
+// Import Swagger (Documentation)
+import swaggerUi from 'swagger-ui-express'; 
+import swaggerSpec from 'src/config/swaggerConfig';
+
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+app.use('/files', express.static(uploadConfig.directory));
 
-// Import Swagger (Documentation)
-import swaggerUi from 'swagger-ui-express'; 
-import swaggerSpec from 'src/config/swaggerConfig';
 
 // Import routes
 app.use(routes);
@@ -24,7 +29,7 @@ app.use(routes);
 app.use(errors());
 
 // Documentation
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(
   (error: Error, request: Request, response: Response, next: NextFunction): any => {
@@ -43,5 +48,5 @@ app.use(
 );
 
 app.listen(3333, () => {
-  console.log(`|SERVER| Started on port 3333! 🎈`)
+  console.log(`|SERVER| Started on port 3333! 🚀`);
 });
