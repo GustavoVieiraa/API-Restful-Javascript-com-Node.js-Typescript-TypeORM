@@ -9,8 +9,6 @@ interface IRequest {
   password: string;
 }
 
-
-
 class CreateSessionService {
   public async execute({ email, password }: IRequest): Promise<User>  {
 
