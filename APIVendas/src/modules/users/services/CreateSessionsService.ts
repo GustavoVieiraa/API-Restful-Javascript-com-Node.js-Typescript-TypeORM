@@ -2,6 +2,7 @@ import { getCustomRepository } from "typeorm";
 import AppError from "@shared/errors/AppError";
 import User from "../typeorm/entities/User";
 import { sign } from "jsonwebtoken";
+import authConfig from "@config/auth";
 import UsersRepository from "../typeorm/repositories/UsersRepository";
 import { compare, hash } from "bcryptjs";
 
@@ -32,9 +33,9 @@ class CreateSessionService {
       throw new AppError('Incorrect password', 401);
     }
 
-    const token = sign({}, '1f76a56e6790194c10eb51bd2d0d0eb5', {
+    const token = sign({}, authConfig.jwt.secret, {
       subject: user.id,
-      expiresIn: '1d',
+      expiresIn: authConfig.jwt.expiresIn,
     })
 
     return {

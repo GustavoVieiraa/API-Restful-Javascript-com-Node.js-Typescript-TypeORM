@@ -31,7 +31,7 @@
     "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
       "@config/*": [
-        "src/modules/*"
+        "src/config/*"
       ],
       "@modules/*": [
         "src/modules/*"
