@@ -1,5 +1,5 @@
 import { Request, response, Response } from 'express'
-import ResetPasswordService from '../services/ResetPassowrdService';
+import ResetPasswordService from '../services/ResetPasswordService';
 
 
 export default class ResetPasswordController {
