@@ -32,10 +32,6 @@ class UpdateProfileService {
       throw new AppError('There is already one user with this email.');
     }
 
-    if (!userUpdateEmail) {
-      throw new AppError('Email not found.');
-    }
-
     if (password && !old_password) {
       throw new AppError('Old password is required.');
     }
