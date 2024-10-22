@@ -1,3 +1,4 @@
+import customersRouter from '@modules/customers/routes/customers.routes';
 import productsRouter from '@modules/products/routes/products.routes';
 import passwordRouter from '@modules/users/routes/password.routes';
 import profileRouter from '@modules/users/routes/profile.routes';
@@ -12,5 +13,6 @@ routes.use('/api/v1/users', usersRouter);
 routes.use('/api/v1/sessions', sessionsRouter);
 routes.use('/api/v1/password', passwordRouter);
 routes.use('/api/v1/profile', profileRouter);
+routes.use('/api/v1/customers', customersRouter);
 
 export default routes;
